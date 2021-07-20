@@ -1,14 +1,23 @@
 function preload() {
+  //=============================================
     this.load.image('player', 'assets/repl.png');
+  //=============================================
+    this.load.image('background', 'assets/parallax-mountain-bg.png');
+    this.load.image('personagem', 'assets/idle.gif');
 }
 
 function create() {
+
+    this.add.image(600,400,'background')
+
+
+//===========================================================
     this.w = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W)
     this.a = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A)
     this.s = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S)
     this.d = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D)
 
-    this.player = this.physics.add.image(config.width / 2, config.height / 2, 'player').setScale(0.25, 0.25);
+    this.player = this.physics.add.image(config.width / 2, config.height / 2, 'personagem').setScale(2.5, 2.5);
     this.player.setCollideWorldBounds(true);
 }
 
@@ -22,9 +31,10 @@ function update() {
 
 const config = {
     type: Phaser.AUTO,
-    width: 500,
-    height: 400,
+    width: 1200,
+    height: 800,
     backgroundColor: '#f9f9f9',
+    autoCenter: Phaser.Scale.CENTER_BOTH,
     physics: {
         default: 'arcade',
         arcade: {
