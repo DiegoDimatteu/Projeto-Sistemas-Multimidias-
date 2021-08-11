@@ -14,4 +14,4 @@ Trabalho do curso de ciência da computação do campus IFB Taguatinga referente
 
 #### Tecnologias associadas:
 
-  - [JavaScript;](https://www.javascript.com/)
+  - [JavaScript.](https://www.javascript.com/)
