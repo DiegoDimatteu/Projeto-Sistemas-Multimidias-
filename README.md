@@ -1,6 +1,6 @@
-# Jogo: Escalada Heroica
+# Escalada Heroica
 
-Trabalho do curso de ciência da computação do campus IFB Taguatinga referente a matéria de Sistemas Multimidias
+Trabalho do curso de ciência da computação do campus IFB Taguatinga referente a matéria de Sistemas Multimidias. O projeto consiste na criação de um jogo no estilo Endless Runner
 
 ## Informações do projeto
 
