@@ -1,4 +1,4 @@
-# ParaDot
+# Jogo Escalada Heroica
 
 Trabalho do curso de ciência da computação do campus IFB Taguatinga referente a matéria de Sistemas Multimidias
 
