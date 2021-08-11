@@ -2,7 +2,7 @@ function preload() {
   //=============================================
     this.load.image('player', 'assets/repl.png');
   //=============================================
-    this.load.image('background', 'assets/parallax-mountain-bg.png');
+    this.load.image('background', 'assets/background.png');
     this.load.image('personagem', 'assets/idle.gif');
 }
 
