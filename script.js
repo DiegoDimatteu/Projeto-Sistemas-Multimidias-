@@ -1,14 +1,16 @@
-function preload() {
+/*function preload() {
   //=============================================
     this.load.image('player', 'assets/repl.png');
   //=============================================
     this.load.image('background', 'assets/background.png');
-    this.load.image('personagem', 'assets/idle.gif');
+    this.load.image('personagem', 'assets/player/idle.gif');
 }
 
 function create() {
+    const width = this.scale.width;
+    const height = this.scale.height;
 
-    this.add.image(600,400,'background')
+    this.add.image(width*0.5, height*0.5,'background')
 
 
 //===========================================================
@@ -31,8 +33,8 @@ function update() {
 
 const config = {
     type: Phaser.AUTO,
-    width: 1200,
-    height: 800,
+    width: 998,
+    height: 643,
     backgroundColor: '#f9f9f9',
     autoCenter: Phaser.Scale.CENTER_BOTH,
     physics: {
@@ -52,3 +54,26 @@ const config = {
 };
 
 const game = new Phaser.Game(config);
+*/
+
+export default window.Phaser;
+import Game from "./game/inicio.js";
+
+console.dir(Phaser)
+
+new Phaser.Game({
+    type: Phaser.AUTO,
+    width: 998,
+    height: 643,
+    scene: ["inicio","game/inicio.js"],
+    scale: {mode: Phaser.Scale.FIT, autoCenter: Phaser.Scale.CENTER_BOTH},
+    physics: {
+        default: "arcade",
+        arcade: {
+            gravity: {
+                y: 1000
+            },
+            debug: false
+        }
+    }
+});
