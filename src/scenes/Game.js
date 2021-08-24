@@ -2,19 +2,12 @@ import Phaser from "../lib/phaser.js";
 
 export default class Game extends Phaser.Scene {
     personagem
-
     platforms
-
     cursors
-
     jumpCount = 0
-
     dir = 1
-
     k = 0
-
     score
-
     highscore = 0
     
     constructor() {
@@ -35,14 +28,14 @@ export default class Game extends Phaser.Scene {
         this.load.image("far","assets/far-grounds.png");
 
         this.load.audio("musica_fundo", ["assets/audio/background_song.mp3"]);
-        this.load.spritesheet("HeroParado", "assets/player/paradoS.png", { frameWidth: 19, frameHeight: 34 });
-        this.load.spritesheet("HeroParado2", "assets/player/paradoSE.png", { frameWidth: 19, frameHeight: 34});
-        this.load.spritesheet("HeroQueda", "assets/player/landingS.png", { frameWidth: 20, frameHeight: 35 });
-        this.load.spritesheet("HeroQueda2", "assets/player/landingSE.png", { frameWidth: 20, frameHeight: 35 });
-        this.load.spritesheet("HeroPulo", "assets/player/jumpS.png", { frameWidth: 20, frameHeight: 40 });
-        this.load.spritesheet("HeroPulo2", "assets/player/jumpSE.png", { frameWidth: 20, frameHeight: 40 });
-        this.load.spritesheet("HeroCorridaEsq", "assets/player/runSE.png", { frameWidth: 21, frameHeight: 33 });
-        this.load.spritesheet("HeroCorridaDir", "assets/player/runS.png", { frameWidth: 21, frameHeight: 33 });
+        this.load.spritesheet("Parado", "assets/player/paradoS.png", { frameWidth: 19, frameHeight: 34 });
+        this.load.spritesheet("Parado2", "assets/player/paradoSE.png", { frameWidth: 19, frameHeight: 34});
+        this.load.spritesheet("Queda", "assets/player/landingS.png", { frameWidth: 20, frameHeight: 35 });
+        this.load.spritesheet("Queda2", "assets/player/landingSE.png", { frameWidth: 20, frameHeight: 35 });
+        this.load.spritesheet("Pulo", "assets/player/jumpS.png", { frameWidth: 20, frameHeight: 40 });
+        this.load.spritesheet("Pulo2", "assets/player/jumpSE.png", { frameWidth: 20, frameHeight: 40 });
+        this.load.spritesheet("CorridaEsq", "assets/player/runSE.png", { frameWidth: 21, frameHeight: 33 });
+        this.load.spritesheet("CorridaDir", "assets/player/runS.png", { frameWidth: 21, frameHeight: 33 });
     }
 
 findBottomMostPlatform(){
@@ -110,7 +103,7 @@ findBottomMostPlatform(){
             const body = platform.body;
             body.updateFromGameObject();
         } 
-        this.personagem = this.physics.add.sprite(140, 270, "HeroParado");
+        this.personagem = this.physics.add.sprite(140, 270, "Parado");
         this.physics.add.collider(this.platforms, this.personagem);
         //Hitbox - Collision box, false diz para só haver colisão com objetos vindo de baixo
         this.personagem.setSize(30, 10, true);
@@ -129,57 +122,57 @@ findBottomMostPlatform(){
         this.spacebar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         
         this.anims.create({
-            key: "andaresquerda",
-            frames: this.anims.generateFrameNumbers("HeroCorridaEsq", { start: 0, end: 7}),
+            key: "andar_e",
+            frames: this.anims.generateFrameNumbers("CorridaEsq", { start: 0, end: 7}),
             frameRate: 16,
             repeat: -1
         });
 
         this.anims.create({
-            key: "andardireita",
-            frames: this.anims.generateFrameNumbers("HeroCorridaDir", { start: 0, end: 7}),
+            key: "andar_d",
+            frames: this.anims.generateFrameNumbers("CorridaDir", { start: 0, end: 7}),
             frameRate: 16,
             repeat: -1
         });
         
         this.anims.create({
             key: "parado",
-            frames: this.anims.generateFrameNumbers("HeroParado", {start: 0, end: 11}),
+            frames: this.anims.generateFrameNumbers("Parado", {start: 0, end: 11}),
             frameRate: 24,
             repeat: -1
         });
       
         this.anims.create({
-            key: "parado2",
-            frames: this.anims.generateFrameNumbers("HeroParado2",{start: 0, end: 11}),
+            key: "parado_e",
+            frames: this.anims.generateFrameNumbers("Parado2",{start: 0, end: 11}),
             frameRate: 24,
             repeat: -1
         });
 
         this.anims.create({
-            key: "Pulo",
-            frames: this.anims.generateFrameNumbers("HeroPulo",{start: 0, end: 5}),
+            key: "pulo",
+            frames: this.anims.generateFrameNumbers("Pulo",{start: 0, end: 5}),
             frameRate: 12,
             repeat: -1
         });
 
         this.anims.create({
-            key: "Pulo2",
-            frames: this.anims.generateFrameNumbers("HeroPulo2",{start: 0, end: 5}),
+            key: "pulo_e",
+            frames: this.anims.generateFrameNumbers("Pulo2",{start: 0, end: 5}),
             frameRate: 12,
             repeat: -1
         });
 
         this.anims.create({
-            key: "Caindo",
-            frames: this.anims.generateFrameNumbers("HeroQueda",{start: 0, end: 1}),
+            key: "caindo",
+            frames: this.anims.generateFrameNumbers("Queda",{start: 0, end: 1}),
             frameRate: 10,
             repeat: -1
         });
         
         this.anims.create({
-            key: "Caindo2",
-            frames: this.anims.generateFrameNumbers("HeroQueda2",{start: 0, end: 1}),
+            key: "caindo_e",
+            frames: this.anims.generateFrameNumbers("Queda2",{start: 0, end: 1}),
             frameRate: 10,
             repeat: -1
         });
@@ -213,14 +206,14 @@ findBottomMostPlatform(){
         if (this.cursors.left.isDown) {
             this.personagem.setVelocityX(-200);
             if(touchingDown){
-            this.personagem.anims.playReverse("andaresquerda", true);
+            this.personagem.anims.playReverse("andar_e", true);
             }
             this.dir = 0;
         }
         else if (this.cursors.right.isDown) {
             this.personagem.setVelocityX(200);
             if(touchingDown){
-            this.personagem.anims.play("andardireita", true);
+            this.personagem.anims.play("andar_d", true);
             }
             this.dir = 1;
             
@@ -230,7 +223,7 @@ findBottomMostPlatform(){
             this.personagem.setVelocityX(0);
             if(touchingDown){
                 if(this.dir === 0){
-                    this.personagem.anims.playReverse("parado2", true);
+                    this.personagem.anims.playReverse("parado_e", true);
                 }
                 if(this.dir === 1){
                     this.personagem.anims.play("parado", true);
@@ -244,19 +237,19 @@ findBottomMostPlatform(){
             this.personagem?.setVelocityY(-430);
             this.jumpCount++;
             if(this.dir === 0){
-                this.personagem.anims.playReverse("Pulo2", true);
+                this.personagem.anims.playReverse("pulo_e", true);
             }
             if(this.dir === 1){
-                this.personagem.anims.play("Pulo", true);
+                this.personagem.anims.play("pulo", true);
             }
         }
 
         else if(this.personagem.body.velocity.y >= 0 && !touchingDown){
             if(this.dir == 0){
-                this.personagem.anims.playReverse("Caindo2", true);
+                this.personagem.anims.playReverse("caindo_e", true);
             }
             if(this.dir == 1){
-                this.personagem.anims.play("Caindo", true);
+                this.personagem.anims.play("caindo", true);
             }
         }
 
