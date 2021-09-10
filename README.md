@@ -14,8 +14,19 @@ Trabalho do curso de ciência da computação do campus IFB Taguatinga referente
 
 #### Tecnologias associadas:
 
-  - [JavaScript.](https://www.javascript.com/)
+  - [JavaScript;](https://www.javascript.com/)
+  - [Phaser.](https://phaser.io/)
 
+### Pacotes usados:
+  
+  - [Free Volcano Platform Tileset;](https://opengameart.org/content/free-volcano-platform-tileset)
+  - [Jungle Pack;](https://jesse-m.itch.io/jungle-pack)
+  - [Magic Cliffs Environment;](https://ansimuz.itch.io/magic-cliffs-environment)
+  - [Mountain Dusk Parallax background.](https://ansimuz.itch.io/mountain-dusk-parallax-background)
+
+### Vídeo no Youtube:
+
+  - [ESCALADA HEROICA - JOGO.](https://www.youtube.com/watch?v=2ycOkehZ21o)
 
 #### Link do jogo:
 
