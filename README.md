@@ -24,6 +24,10 @@ Trabalho do curso de ciência da computação do campus IFB Taguatinga referente
   - [Magic Cliffs Environment;](https://ansimuz.itch.io/magic-cliffs-environment)
   - [Mountain Dusk Parallax background.](https://ansimuz.itch.io/mountain-dusk-parallax-background)
 
+### Vídeo no Youtube:
+
+  - [ESCALADA HEROICA - JOGO.](https://www.youtube.com/watch?v=2ycOkehZ21o)
+
 #### Link do jogo:
 
   - [Escalada Heroica](https://projetosm.diegodimatteu.repl.co/)
