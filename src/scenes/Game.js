@@ -277,7 +277,7 @@ findBottomMostDamage(){
             }
         });
 
-        if(this.score >= 30){
+        if(this.score >= 100){
           this.damages.children.iterate(child => {
             /** @type {Phaser.Physics.Arcade.Sprite} */
             const damage = child;
